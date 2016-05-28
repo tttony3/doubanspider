@@ -34,7 +34,7 @@ def gettopchartbooks():
     cursor.close()
 
 
-conn = mysql.connector.connect(user='root', password='qqit101', database='doubanbook')
+conn = mysql.connector.connect(user='root', password='password', database='doubanbook')
 cursor = conn.cursor()
 cursor.execute('delete from think_topbook')
 cursor.execute('delete from think_chartbook')
