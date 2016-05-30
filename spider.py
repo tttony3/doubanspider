@@ -6,7 +6,7 @@ import mysql.connector
 def gettopbooks(start):
     cursor = conn.cursor()
     url = 'https://book.douban.com/top250?start=' + str(start)
-    pattern = re.compile('<a href.*?subject/(.*?)/".*?\{i:\'(.*?)\'.*?src="(.*?)".*?title="(.*?)".*?class="pl">(.*?)</p>', re.S)
+    pattern = re.compile('<a class="nbg" href.*?subject/(.*?)/".*?\{i:\'(.*?)\'.*?src="(.*?)".*?title="(.*?)".*?class="pl">(.*?)</p>', re.S)
     response = urllib2.urlopen(url)
     content = response.read().decode('utf-8')
     items = re.findall(pattern, content)
